@@ -145,9 +145,9 @@ function uniquifyArray(arr) {
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist(arr, word) { 
+function doesWordExist(arr, word) {
   if (arr.length === 0) return null
-  if(!arr.includes(word))return false
+  if (!arr.includes(word)) return false
   else return true
 }
 
@@ -168,7 +168,17 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() { }
+function howManyTimes(arr, word) {
+  let words = 0;
+  if (arr.length === 0) return 0
+  else {
+    arr.forEach((el) => {
+      if (el === word) words += 1;
+    })
+    return words
+  }
+}
+
 
 
 
@@ -196,7 +206,17 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() { }
+function greatestProduct(matrix) {
+  let greatest = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let ind = 0; ind < matrix[i].length; ind++) {
+      if (matrix[i][ind] > matrix[i][ind - 1]) greatest = matrix[i][ind]
+    }
+  }
+  return greatest
+}
+
+console.log(greatestProduct(matrix));
 
 
 
